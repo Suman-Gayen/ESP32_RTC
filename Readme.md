@@ -87,21 +87,6 @@ The ESP32 is the main controller of the entire system.
 - I2C support
 - UART programming interface
 - Low power operation
-
-### Why ESP32 Was Used Instead of Arduino UNO?
-
-| ESP32 | Arduino UNO |
-|---|---|
-| Faster dual-core CPU | Slower 8-bit CPU |
-| Built-in WiFi & Bluetooth | No wireless connectivity |
-| More GPIO pins | Limited GPIO |
-| Higher RAM & Flash | Lower memory |
-| Supports advanced communication | Limited performance |
-| Better for IoT projects | Suitable for simple projects |
-
-### Conclusion
-ESP32 was selected because it offers better processing capability, wireless features, and modern communication support.
-
 ---
 
 ## 4.2 DS3231M RTC Module
@@ -125,19 +110,6 @@ The DS3231M maintains accurate date and time information.
 | VBAT | Backup Battery Input |
 | SQW | Square Wave Output |
 | RST | Reset Pin |
-
-### Why DS3231M Was Used Instead of DS1307?
-
-| DS3231M | DS1307 |
-|---|---|
-| Higher accuracy | Lower accuracy |
-| Temperature compensated | No compensation |
-| Better stability | Drift issue |
-| Integrated crystal | External crystal required |
-| Industrial grade performance | Basic RTC functionality |
-
-### Conclusion
-DS3231M provides highly accurate timekeeping with better long-term reliability.
 
 ---
 
@@ -163,19 +135,6 @@ SPI Communication:
 | CLK | Clock Signal |
 | LOAD | Chip Select |
 
-### Why MAX7219 Was Used Instead of Direct GPIO Driving?
-
-| MAX7219 | Direct GPIO Driving |
-|---|---|
-| Uses fewer GPIO pins | Requires many GPIO pins |
-| Built-in multiplexing | Complex software required |
-| Adjustable brightness | External control needed |
-| Simplified PCB routing | Complex PCB design |
-| Stable display operation | Higher CPU load |
-
-### Conclusion
-MAX7219 greatly simplifies display control and reduces microcontroller workload.
-
 ---
 
 ## 4.4 AMS1117 Voltage Regulator
@@ -197,19 +156,6 @@ Converts input voltage to stable 3.3V output.
 | Input Capacitor | Input filtering |
 | Output Capacitor | Output stabilization |
 
-### Why AMS1117 Was Used?
-
-| AMS1117 Advantages |
-|---|
-| Low cost |
-| Easy availability |
-| Simple implementation |
-| Stable output voltage |
-| Commonly used with ESP32 |
-
-### Conclusion
-AMS1117 provides reliable voltage regulation suitable for ESP32 systems.
-
 ---
 
 ## 4.5 7-Segment Display (CC56-12SRWA)
@@ -227,19 +173,6 @@ The display receives segment control signals from MAX7219 and displays numbers a
 |---|---|
 | A-G | Numeric display segments |
 | DP | Decimal Point |
-
-### Why 7-Segment Display Was Used Instead of LCD?
-
-| 7-Segment Display | LCD |
-|---|---|
-| Bright output | Lower brightness |
-| Easy numeric viewing | More complex interface |
-| Faster display response | Slower refresh |
-| Better for clocks | Better for text |
-| Simple control with MAX7219 | More software handling |
-
-### Conclusion
-7-segment displays are ideal for clock and timer applications.
 
 ---
 
@@ -368,24 +301,7 @@ Current-limiting resistors protect LEDs from excess current.
 
 ---
 
-# 12. PCB Design Considerations
-
-## Important Design Practices
-
-- Proper grounding
-- Short I2C traces
-- Short SPI routing
-- Power decoupling near ICs
-- Proper track width for power lines
-- Separate analog and digital noise paths
-
-## Mounting Holes
-
-Mounting holes are included for mechanical support and enclosure installation.
-
----
-
-# 13. Advantages of This Project
+# 12. Advantages of This Project
 
 - Accurate timekeeping
 - Battery backup support
@@ -398,7 +314,7 @@ Mounting holes are included for mechanical support and enclosure installation.
 
 ---
 
-# 14. Applications of This Project
+# 13. Applications of This Project
 
 - Digital clocks
 - Industrial timer systems
@@ -409,87 +325,7 @@ Mounting holes are included for mechanical support and enclosure installation.
 
 ---
 
-# 15. Possible Future Improvements
-
-- Add WiFi time synchronization (NTP)
-- Add temperature display
-- Add alarm functionality
-- Add mobile application control
-- Add OLED display support
-- Add buzzer notifications
-- Add battery charging circuit
-
----
-
-# 16. Frequently Asked Technical Questions and Answers
-
-## Q1. Why was ESP32 used instead of Arduino UNO?
-
-### Answer
-ESP32 provides:
-
-- Faster processing
-- WiFi and Bluetooth support
-- More GPIOs
-- Better memory capacity
-- Better communication support
-
-Therefore, ESP32 is more suitable for modern embedded and IoT applications.
-
----
-
-## Q2. Why was DS3231M used instead of DS1307?
-
-### Answer
-DS3231M offers:
-
-- Better timing accuracy
-- Temperature compensation
-- Integrated oscillator
-- Less time drift
-- Better reliability
-
-Hence DS3231M is preferred for accurate clock applications.
-
----
-
-## Q3. Why was MAX7219 used?
-
-### Answer
-MAX7219 simplifies display interfacing by:
-
-- Reducing GPIO usage
-- Handling multiplexing internally
-- Simplifying software design
-- Providing brightness control
-- Improving display stability
-
----
-
-## Q4. Why are pull-up resistors used on SDA and SCL lines?
-
-### Answer
-I2C communication requires pull-up resistors because:
-
-- I2C devices use open-drain outputs
-- Lines cannot generate HIGH logic directly
-- Pull-ups maintain stable HIGH state
-- Improves communication reliability
-
----
-
-## Q5. Why is a battery connected to the RTC?
-
-### Answer
-The RTC battery ensures:
-
-- Time retention during power failure
-- Continuous clock operation
-- No need to reset time after power loss
-
----
-
-# 17. Conclusion
+# 14. Conclusion
 
 This ESP32 RTC Clock Display project demonstrates a complete embedded system combining:
 
@@ -505,7 +341,7 @@ The combination of ESP32, DS3231M, and MAX7219 creates a modern and powerful RTC
 
 ---
 
-# 18. Reference Schematic Information
+# 15. Reference Schematic Information
 
 Project Name: Real Time Clock Measurement
 
